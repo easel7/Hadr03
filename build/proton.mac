@@ -5,12 +5,12 @@
 /run/verbose 2
 #
 /testhadr/det/setMat G4_BGO 
-/testhadr/det/setSize 35 cm 
+/testhadr/det/setSize 10 m
 #
 /run/initialize
 #
 /process/list
-###/process/inactivate ionInelastic
+
 #
 /gun/particle proton
 /gun/energy 100 GeV
