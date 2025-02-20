@@ -12,7 +12,7 @@
 /process/list
 ###/process/inactivate ionInelastic
 #
-/gun/particle deuteron
+/gun/particle electron
 /gun/energy 100 GeV
 #
 /run/printProgress 10000

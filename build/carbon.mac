@@ -5,15 +5,17 @@
 /run/verbose 2
 #
 /testhadr/det/setMat G4_BGO 
-/testhadr/det/setSize 35 cm
+/testhadr/det/setSize 0.35 m
 #
 /run/initialize
 #
 /process/list
-###/process/inactivate ionInelastic
-#
-/gun/particle deuteron
+
+/gun/particle ion
+/gun/ion 6 12 6
 /gun/energy 100 GeV
+/control/execute vis.mac
 #
 /run/printProgress 10000
 /run/beamOn 100000
+#
