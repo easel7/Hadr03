@@ -4,8 +4,8 @@
 /control/verbose 2
 /run/verbose 2
 #
-/testhadr/det/setIsotopeMat B10 5 10 2.46 g/cm3
-###/testhadr/det/setMat G4_B
+# /testhadr/det/setIsotopeMat B10 5 10 2.46 g/cm3
+/testhadr/det/setMat G4_B
 /testhadr/det/setSize 1000 m
 #
 /run/initialize

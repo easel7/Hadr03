@@ -5,7 +5,7 @@
 /run/verbose 2
 #
 /testhadr/det/setMat G4_BGO 
-/testhadr/det/setSize 0.35 m
+/testhadr/det/setSize 25 mm
 #
 /run/initialize
 #
