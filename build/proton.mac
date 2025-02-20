@@ -10,7 +10,7 @@
 /run/initialize
 #
 /process/list
-
+/process/inactivate ionElastic
 #
 /gun/particle proton
 /gun/energy 100 GeV

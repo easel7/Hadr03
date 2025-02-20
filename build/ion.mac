@@ -10,7 +10,7 @@
 /run/initialize
 #
 /process/list
-###/process/inactivate ionInelastic
+/process/inactivate ionElastic
 #
 /gun/particle ion
 /gun/ion 3 7
