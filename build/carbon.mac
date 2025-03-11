@@ -5,14 +5,14 @@
 /run/verbose 2
 #
 /testhadr/det/setMat G4_BGO 
-/testhadr/det/setSize 25 mm
+/testhadr/det/setSize 35 cm
 #
 /run/initialize
 #
 /process/list
 
 /gun/particle ion
-/gun/ion 6 12 6
+/gun/ion 6 12 0
 /gun/energy 100 GeV
 /control/execute vis.mac
 #

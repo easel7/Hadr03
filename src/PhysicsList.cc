@@ -109,6 +109,8 @@ PhysicsList::PhysicsList()
   //
   RegisterPhysics(new GammaNuclearPhysics("gamma"));
   ////RegisterPhysics( new GammaNuclearPhysicsLEND("gamma"));
+
+  // RegisterPhysics(new G4EmStandardPhysics()); // 加入电磁过程，包括电离损失
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

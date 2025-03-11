@@ -10,10 +10,12 @@
 /run/initialize
 #
 /process/list
-# /process/inactivate ionElastic
-#
-/gun/particle proton
+
+/gun/particle ion
+/gun/ion 8 16 0
 /gun/energy 100 GeV
+/control/execute vis.mac
 #
 /run/printProgress 10000
 /run/beamOn 100000
+#
