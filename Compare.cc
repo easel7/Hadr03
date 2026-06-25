@@ -1,6 +1,6 @@
 void Compare()
 {
-    auto file = TFile::Open("/Users/xiongzheng/software/Hadr03/build/proton.root");
+    auto file = TFile::Open("/Users/xiongzheng/software/Hadr03/build/proton_BGO.root");
     auto h2   = (TH1D*)file->Get("2");
     auto h3   = (TH1D*)file->Get("3");
 

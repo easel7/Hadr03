@@ -4,7 +4,7 @@
 /control/verbose 2
 /run/verbose 0
 #
-/testhadr/det/setMat G4_Bi
+/testhadr/det/setMat G4_BGO
 #
 /run/initialize
 #
@@ -14,7 +14,7 @@
 /process/list
 /process/inactivate hadElastic
 #
-/analysis/setFileName proton
+/analysis/setFileName proton_BGO
 /analysis/h1/set 1  100  0.  1 TeV	# default the energy of the most energetic secondary
 /analysis/h1/set 2  100  0.  1 TeV	# the energy of the most energetic secondary
 /analysis/h1/set 3  100  0.  1 TeV	# the energy of the most energetic secondary IF the most energetic secondary is of the same type as the primary
