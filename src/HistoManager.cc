@@ -60,8 +60,8 @@ void HistoManager::Book()
   const G4String title[] = {
     "dummy",  // 0
     "kinetic energy of scattered primary particle",  // 1
-    "kinetic energy of gamma",  // 2
-    "kinetic energy of electrons",  // 3
+    "kinetic energy of the most energetic secondary",  // 2
+    "kinetic energy of the most energetic secondary + secondries is of the same type as primary",  // 3
     "kinetic energy of neutrons",  // 4
     "kinetic energy of protons",  // 5
     "kinetic energy of deuterons",  // 6

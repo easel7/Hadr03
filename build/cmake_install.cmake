@@ -1,4 +1,4 @@
-# Install script for directory: /Users/xiongzheng/software/hadr03
+# Install script for directory: /Users/xiongzheng/software/Hadr03
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,30 +34,31 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/Users/xiongzheng/software/hadr03/build/Hadr03")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/Users/xiongzheng/software/Hadr03/build/Hadr03")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Hadr03" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Hadr03")
-    execute_process(COMMAND /opt/homebrew/anaconda3/bin/install_name_tool
-      -delete_rpath "/Users/xiongzheng/software/build/geant4-v11.3.0-install/lib"
+    execute_process(COMMAND /usr/bin/install_name_tool
+      -delete_rpath "/Users/xiongzheng/software/build/geant4-v11.4.0-install/lib"
+      -delete_rpath "/opt/homebrew/opt/qt/lib"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Hadr03")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/Library/Developer/CommandLineTools/usr/bin/strip" -u -r "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Hadr03")
+      execute_process(COMMAND "/usr/bin/strip" -u -r "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Hadr03")
     endif()
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/Users/xiongzheng/software/hadr03/build/CMakeFiles/Hadr03.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
+  include("/Users/xiongzheng/software/Hadr03/build/CMakeFiles/Hadr03.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/xiongzheng/software/hadr03/build/install_local_manifest.txt"
+  file(WRITE "/Users/xiongzheng/software/Hadr03/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -73,6 +74,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/xiongzheng/software/hadr03/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/Users/xiongzheng/software/Hadr03/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

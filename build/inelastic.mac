@@ -2,22 +2,22 @@
 # Macro file for "Hadr03.cc"
 #
 /control/verbose 2
-/run/verbose 2
+/run/verbose 0
 #
-/testhadr/det/setMat Molybdenum98 
+/testhadr/det/setMat G4_Bi
 #
 /run/initialize
 #
 /gun/particle proton
-/gun/energy 10 MeV
+/gun/energy 1 TeV
 #
 /process/list
 /process/inactivate hadElastic
 #
-/analysis/setFileName inelastic
-/analysis/h1/set 2  100  0. 8000 keV	#gamma
-/analysis/h1/set 8  100  0.  400 keV	#nuclei
-/analysis/h1/set 11 100 -10  +0  MeV	#Q
-#
+/analysis/setFileName proton
+/analysis/h1/set 1  100  0.  1 TeV	# default the energy of the most energetic secondary
+/analysis/h1/set 2  100  0.  1 TeV	# the energy of the most energetic secondary
+/analysis/h1/set 3  100  0.  1 TeV	# the energy of the most energetic secondary IF the most energetic secondary is of the same type as the primary
+
 /run/printProgress 1000
-/run/beamOn 10000
+/run/beamOn 1000000
