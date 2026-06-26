@@ -19,7 +19,8 @@ void Compare()
     h3->Draw("histsame");
     h4->Draw("histsame");
     // h5->Draw("histsame");
-    cout << "h4" << h4->Integral() << endl;
+    cout << "h4 " << h4->Integral() << endl;
+    cout << "h3 " << h4->Integral() << endl;
 
     auto lg1 = new TLegend(0.12,0.68,0.58,0.88);
     lg1->AddEntry(h2,"most energetic secondary","l");
