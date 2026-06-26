@@ -109,9 +109,10 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
 
   // secondaries
   //
-  G4double EmaxAll   = -1.;
-  G4double EmaxSame  = -1.;
-  G4int    EmaxAll_id = -1;
+  G4double EmaxAll      = -1.;
+  G4double EmaxSame     = -1.;
+  G4int    EmaxAll_id   = -1;
+  G4int    EmaxTrack_id = -1;
 
   auto primary = aStep->GetTrack()->GetDefinition();
   // G4cout << " Primary Type !!! " << primary << G4endl;  
@@ -122,7 +123,9 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     G4String name = particle->GetParticleName();
     G4String type = particle->GetParticleType();
     G4double energy = (*secondary)[lp]->GetKineticEnergy();
+    G4int   Track_id = (*secondary)[lp]->GetCreatorModelID();
     run->ParticleCount(name, energy);
+    
     // G4cout << " Second Type !!! " << particle << G4endl;  
     // energy spectrum
     // ih = 0;
@@ -161,8 +164,9 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
 
     if (energy > EmaxAll)
     {
-      EmaxAll    = energy;
-      EmaxAll_id = lp;
+      EmaxAll      = energy;
+      EmaxAll_id   = lp;
+      EmaxTrack_id = Track_id;
     }
   }
   analysis->FillH1(2,EmaxAll);
@@ -172,6 +176,8 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     if(particle == primary)
     {
       analysis->FillH1(3,EmaxAll); 
+      if ( EmaxTrack_id == 21350)    analysis->FillH1(4,EmaxAll); 
+      if ( EmaxTrack_id == 21600)    analysis->FillH1(5,EmaxAll); 
     }
   }
 

@@ -62,15 +62,16 @@ void HistoManager::Book()
     "kinetic energy of scattered primary particle",  // 1
     "kinetic energy of the most energetic secondary",  // 2
     "kinetic energy of the most energetic secondary + secondries is of the same type as primary",  // 3
-    "kinetic energy of neutrons",  // 4
-    "kinetic energy of protons",  // 5
-    "kinetic energy of deuterons",  // 6
-    "kinetic energy of alphas",  // 7
+    "Track Id of the most energetic secondary + secondries is of the same type as primary QE",  // 4
+    "Track Id of the most energetic secondary + secondries is of the same type as primary diffraction",  // 5
+    "kinetic energy of protons",  // 6
+    "kinetic energy of deuterons",  // 7
+    "kinetic energy of alphas",  // 8
     "kinetic energy of nuclei",  // 8
     "kinetic energy of mesons",  // 9
     "kinetic energy of baryons",  // 10
     "Q = Ekin out - Ekin in",  // 11
-    "Pbalance = mag(P_out - P_in)",  // 12
+    // "Pbalance = mag(P_out - P_in)",  // 12
     "atomic mass of nuclei"  // 13
   };
 
