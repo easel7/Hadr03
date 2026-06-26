@@ -1,6 +1,6 @@
 void Compare()
 {
-    auto file = TFile::Open("/Users/xiongzheng/software/Hadr03/build/proton_BGO_10GeV.root");
+    auto file = TFile::Open("/Users/xiongzheng/software/Hadr03/Root/Proton_BGO_100GeV.root");
     auto h2   = (TH1D*)file->Get("2");
     auto h3   = (TH1D*)file->Get("3");
     auto h4   = (TH1D*)file->Get("4");
@@ -13,7 +13,7 @@ void Compare()
     h3->SetLineColor(kRed);
     h4->SetLineColor(kOrange-3);h4->SetLineWidth(2);
     h5->SetLineColor(kMagenta);h5->SetLineWidth(1);
-
+    gPad->SetLogy(1);
 
     h2->Draw("hist");
     h3->Draw("histsame");
@@ -22,12 +22,12 @@ void Compare()
     cout << "h4 " << h4->Integral() << endl;
     cout << "h3 " << h4->Integral() << endl;
 
-    auto lg1 = new TLegend(0.12,0.68,0.58,0.88);
+    auto lg1 = new TLegend(0.12,0.18,0.58,0.28);
     lg1->AddEntry(h2,"most energetic secondary","l");
     lg1->AddEntry(h3,"most energetic secondary && ==primary","l");
     lg1->AddEntry(h4,"most energetic secondary && ==primary && QE","l");
     lg1->Draw();
 
 
-    // c1->SaveAs("")
+    c1->SaveAs("/Users/xiongzheng/software/Hadr03/Root/Proton_BGO_100GeV.pdf");
 }
