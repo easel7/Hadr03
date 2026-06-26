@@ -1,6 +1,6 @@
 void Compare()
 {
-    auto file = TFile::Open("/Users/xiongzheng/software/Hadr03/build/proton_BGO.root");
+    auto file = TFile::Open("/Users/xiongzheng/software/Hadr03/build/proton_BGO_10TeV.root");
     auto h2   = (TH1D*)file->Get("2");
     auto h3   = (TH1D*)file->Get("3");
 
@@ -10,4 +10,5 @@ void Compare()
     h3->SetLineColor(kRed);
     h2->Draw("hist");
     h3->Draw("histsame");
+    // c1->SaveAs("")
 }
