@@ -1,0 +1,26 @@
+#
+# Macro file for "Hadr03.cc"
+#
+/control/verbose 2
+/run/verbose 0
+#
+/testhadr/det/setMat G4_BGO
+#
+/run/initialize
+#
+/gun/particle deuteron
+/gun/energy 10 GeV
+#
+/process/list
+/process/inactivate hadElastic
+#
+/analysis/setFileName ../Root/Deuteron_BGO_10GeV
+/analysis/h1/set 1  100  0.  10 GeV	# default the energy of the most energetic secondary
+/analysis/h1/set 2  100  0.  10 GeV	# the energy of the most energetic secondary
+/analysis/h1/set 3  100  0.  10 GeV	# the energy of the most energetic secondary IF the most energetic secondary is of the same type as the primary
+/analysis/h1/set 4  100  0.  10 GeV	# the energy of the most energetic secondary IF the most energetic secondary is of the same type as the primary QE
+/analysis/h1/set 5  100  0.  10 GeV	# the energy of the most energetic secondary IF the most energetic secondary is of the same type as the primary diffraction
+
+
+/run/printProgress 1000
+/run/beamOn 1000000
