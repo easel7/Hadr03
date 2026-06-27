@@ -2,25 +2,22 @@
 # Macro file for "Hadr03.cc"
 #
 /control/verbose 2
-/run/verbose 0
+/run/verbose 2
 #
 /testhadr/det/setMat G4_BGO
 #
 /run/initialize
 #
 /gun/particle proton
-/gun/energy 100 GeV
+/gun/energy 1 TeV
 #
 /process/list
 /process/inactivate hadElastic
 #
-/analysis/setFileName proton_BGO_100GeV
-/analysis/h1/set 1  1000  0.  100 GeV	# default the energy of the most energetic secondary
-/analysis/h1/set 2  1000  0.  100 GeV	# the energy of the most energetic secondary
-/analysis/h1/set 3  1000  0.  100 GeV	# the energy of the most energetic secondary IF the most energetic secondary is of the same type as the primary
-/analysis/h1/set 4  1000  0.  100 GeV	# the energy of the most energetic secondary IF the most energetic secondary is of the same type as the primary QE
-/analysis/h1/set 5  1000  0.  100 GeV	# the energy of the most energetic secondary IF the most energetic secondary is of the same type as the primary diffraction
-
-
+/analysis/setFileName inelastic
+/analysis/h1/set 2  1000  0.  1000 MeV	#gamma
+/analysis/h1/set 8  1000  0.  1000 MeV	#nuclei
+/analysis/h1/set 11 100 -10  +0  MeV	#Q
+#
 /run/printProgress 1000
 /run/beamOn 1000000

@@ -108,9 +108,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   }
 
   // secondaries
-  //
   G4double EmaxAll      = -1.;
-  G4double EmaxSame     = -1.;
   G4int    EmaxAll_id   = -1;
   G4int    EmaxTrack_id = -1;
 
@@ -120,9 +118,9 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   for (size_t lp = 0; lp < (*secondary).size(); lp++) 
   {
     particle = (*secondary)[lp]->GetDefinition();
-    G4String name = particle->GetParticleName();
-    G4String type = particle->GetParticleType();
-    G4double energy = (*secondary)[lp]->GetKineticEnergy();
+    G4String name    = particle->GetParticleName();
+    G4String type    = particle->GetParticleType();
+    G4double energy  = (*secondary)[lp]->GetKineticEnergy();
     G4int   Track_id = (*secondary)[lp]->GetCreatorModelID();
     run->ParticleCount(name, energy);
     
@@ -181,18 +179,17 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     }
   }
 
-   
   //  energy-momentum balance
-  G4double Pbal = Pbalance.mag();
-  run->Balance(Pbal);
-  ih = 11;
-  analysis->FillH1(ih, Q);
-  ih = 12;
-  analysis->FillH1(ih, Pbal);
+  // G4double Pbal = Pbalance.mag();
+  // run->Balance(Pbal);
+  // ih = 11;
+  // analysis->FillH1(ih, Q);
+  // ih = 12;
+  // analysis->FillH1(ih, Pbal);
 
   // nuclear channel
   const G4int kMax = 14;
-  const G4String conver[] = {"0",  "",    "2 ",  "3 ",  "4 ",  "5 ",  "6 ",  "7 ", "8 ",
+  const G4String conver[] = {"0",  "1"  , "2 ",  "3 ",  "4 ",  "5 ",  "6 ",  "7 ", "8 ",
                              "9 ", "10 ", "11 ", "12 ", "13 "};
   std::map<G4ParticleDefinition*, G4int>::iterator ip;
   for (ip = fParticleFlag.begin(); ip != fParticleFlag.end(); ip++) {

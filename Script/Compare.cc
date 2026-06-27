@@ -1,6 +1,7 @@
 void Compare()
 {
-    auto file = TFile::Open("/Users/xiongzheng/software/Hadr03/Root/Proton_BGO_100GeV.root");
+    auto file = TFile::Open("/Users/xiongzheng/software/Hadr03/Root/Deuteron_BGO_1TeV.root");
+    auto h1   = (TH1D*)file->Get("1");
     auto h2   = (TH1D*)file->Get("2");
     auto h3   = (TH1D*)file->Get("3");
     auto h4   = (TH1D*)file->Get("4");
@@ -13,7 +14,7 @@ void Compare()
     h3->SetLineColor(kRed);
     h4->SetLineColor(kOrange-3);h4->SetLineWidth(2);
     h5->SetLineColor(kMagenta);h5->SetLineWidth(1);
-    gPad->SetLogy(1);
+    gPad->SetLogy(1); 
 
     h2->Draw("hist");
     h3->Draw("histsame");
@@ -29,5 +30,5 @@ void Compare()
     lg1->Draw();
 
 
-    c1->SaveAs("/Users/xiongzheng/software/Hadr03/Root/Proton_BGO_100GeV.pdf");
+    c1->SaveAs("/Users/xiongzheng/software/Hadr03/Root/Deuteron_BGO_1TeV.pdf");
 }

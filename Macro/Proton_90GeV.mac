@@ -1,0 +1,25 @@
+#
+# Macro file for "Hadr03.cc"
+#
+/control/verbose 2
+/run/verbose 0
+#
+/testhadr/det/setMat G4_BGO
+#
+/run/initialize
+#
+/gun/particle proton
+/gun/energy 90 GeV
+#
+/process/list
+/process/inactivate hadElastic
+#
+/analysis/setFileName ../Root/Proton_BGO_90GeV
+/analysis/h1/set 1  900  0.  90 GeV	# default the energy of the most energetic secondary
+/analysis/h1/set 2  900  0.  90 GeV	# Emax secondary
+/analysis/h1/set 3  900  0.  90 GeV	# Emax secondary && primary
+/analysis/h1/set 4  900  0.  90 GeV	# Emax secondary && primary && TrackID == QE
+/analysis/h1/set 5  900  0.  90 GeV	# Emax secondary && primary && TrackID == Diffraction
+
+/run/printProgress 9000
+/run/beamOn 9000000
