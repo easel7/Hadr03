@@ -1,0 +1,40 @@
+void Compare2()
+{
+
+    int energy[10] = {10,12,16,20,25,40,50,63,80,100};
+
+    for (int ii = 0; ii <10 ; ii++)
+    {
+        auto file = TFile::Open(Form("/Users/xiongzheng/software/Hadr03/Root2/Proton_BGO_%dGeV.root",energy[ii]));
+        auto h1   = (TH1D*)file->Get("1");
+        auto h2   = (TH1D*)file->Get("2");
+        auto h3   = (TH1D*)file->Get("3");
+        auto h4   = (TH1D*)file->Get("4");
+        auto h5   = (TH1D*)file->Get("5");
+
+        auto c1 = new TCanvas("c1","c1",1200,900);
+        c1->cd();
+        gPad->SetGrid(1,1);
+        h2->SetLineColor(kBlue);h2->SetLineWidth(2);
+        h3->SetLineColor(kRed);h3->SetLineWidth(2);
+        h4->SetLineColor(kOrange-3);h4->SetLineWidth(2);
+        h5->SetLineColor(kMagenta);h5->SetLineWidth(2);
+        // gPad->SetLogy(1); 
+        // h2->GetXaxis()->SetLimits(    );
+        h2->Draw("hist");
+        h3->Draw("histsame");
+        h4->Draw("histsame");
+        // h5->Draw("histsame");
+        cout << "h4 " << h4->Integral() << endl;
+        cout << "h3 " << h4->Integral() << endl;
+
+        auto lg1 = new TLegend(0.12,0.18,0.58,0.28);
+        lg1->AddEntry(h2,"most energetic secondary","l");
+        lg1->AddEntry(h3,"most energetic secondary && ==primary","l");
+        lg1->AddEntry(h4,"most energetic secondary && ==primary && QE","l");
+        lg1->Draw();
+
+        c1->SaveAs(Form("/Users/xiongzheng/software/Hadr03/Script/Proton2_BGO_%dGeV.pdf",energy[ii]));
+    } 
+
+}
