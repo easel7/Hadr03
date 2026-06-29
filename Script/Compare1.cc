@@ -1,4 +1,4 @@
-void Compare()
+void Compare1()
 {
 
     int energy[10] = {10,20,30,40,50,60,70,80,90,100};
@@ -14,10 +14,12 @@ void Compare()
 
         auto c1 = new TCanvas("c1","c1",1200,900);
         c1->cd();
-        h2->SetLineColor(kBlue);
-        h3->SetLineColor(kRed);
+        gPad->SetGrid(1,1);
+        gStyle->SetOptStat(0);
+        h2->SetLineColor(kBlue);h2->SetLineWidth(2);
+        h3->SetLineColor(kRed);h3->SetLineWidth(2);
         h4->SetLineColor(kOrange-3);h4->SetLineWidth(2);
-        h5->SetLineColor(kMagenta);h5->SetLineWidth(1);
+        h5->SetLineColor(kMagenta);h5->SetLineWidth(2);
         gPad->SetLogy(1); 
         // h2->GetXaxis()->SetLimits(    );
         h2->Draw("hist");
@@ -26,8 +28,7 @@ void Compare()
         // h5->Draw("histsame");
         cout << "h4 " << h4->Integral() << endl;
         cout << "h3 " << h4->Integral() << endl;
-
-        auto lg1 = new TLegend(0.12,0.18,0.58,0.28);
+        auto lg1 = new TLegend(0.38,0.68,0.78,0.88);
         lg1->AddEntry(h2,"most energetic secondary","l");
         lg1->AddEntry(h3,"most energetic secondary && ==primary","l");
         lg1->AddEntry(h4,"most energetic secondary && ==primary && QE","l");

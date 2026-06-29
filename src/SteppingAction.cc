@@ -111,9 +111,10 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   G4double EmaxAll      = -1.;
   G4int    EmaxAll_id   = -1;
   G4int    EmaxTrack_id = -1;
-
+  // Store the primary info
   auto primary = aStep->GetTrack()->GetDefinition();
-  // G4cout << " Primary Type !!! " << primary << G4endl;  
+  auto primary_name = primary->GetParticleName();
+  // G4cout << " Primary Type !!! " << primary_name << G4endl;  
   const std::vector<const G4Track*>* secondary = aStep->GetSecondaryInCurrentStep();
   for (size_t lp = 0; lp < (*secondary).size(); lp++) 
   {
@@ -122,44 +123,8 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     G4String type    = particle->GetParticleType();
     G4double energy  = (*secondary)[lp]->GetKineticEnergy();
     G4int   Track_id = (*secondary)[lp]->GetCreatorModelID();
-    run->ParticleCount(name, energy);
-    
-    // G4cout << " Second Type !!! " << particle << G4endl;  
-    // energy spectrum
-    // ih = 0;
-    // if (particle == G4Gamma::Gamma())
-    //   ih = 2;
-    // else if (particle == G4Electron::Electron())
-    //   ih = 3;
-    // if (particle == G4Neutron::Neutron())
-    //   ih = 4;
-    // else if (particle == G4Proton::Proton())
-    //   ih = 5;
-    // else if (particle == G4Deuteron::Deuteron())
-    //   ih = 6;
-    // else if (particle == G4Alpha::Alpha())
-    //   ih = 7;
-    // else if (particle == G4AntiProton::AntiProton())
-    //   ih = 8;
-    // else if (type == "meson")
-    //   ih = 9;
-    // else if (type == "baryon")
-    //   ih = 10;
-    // if (ih > 0) analysis->FillH1(ih, energy);
-    // // atomic mass
-    // if (type == "nucleus") {
-    //   G4int A = particle->GetAtomicMass();
-    //   analysis->FillH1(13, A);
-    // }
-    // energy-momentum balance
-    // G4ThreeVector momentum = (*secondary)[lp]->GetMomentum();
-    // Q += energy;
-    // Pbalance += momentum;
-    // // count e- from internal conversion together with gamma
-    // if (particle == G4Electron::Electron()) particle = G4Gamma::Gamma();
-    // // particle flag
-    // fParticleFlag[particle]++;
-
+    run->ParticleCount(name, energy);    
+    // G4cout << " Second Type !!! " << name << G4endl;  
     if (energy > EmaxAll)
     {
       EmaxAll      = energy;
@@ -168,6 +133,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     }
   }
   analysis->FillH1(2,EmaxAll);
+  // protection
   if (EmaxAll >= 0 && EmaxAll_id >= 0)
   {   
     particle = (*secondary)[EmaxAll_id]->GetDefinition();
