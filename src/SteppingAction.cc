@@ -115,6 +115,11 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   auto primary = aStep->GetTrack()->GetDefinition();
   auto primary_name = primary->GetParticleName();
   // G4cout << " Primary Type !!! " << primary_name << G4endl;  
+  bool HasMeson = false;
+  bool HasPionsKaons = false;
+
+  bool HasBaryon = false;
+  int Baryon_Count = 0;
   const std::vector<const G4Track*>* secondary = aStep->GetSecondaryInCurrentStep();
   for (size_t lp = 0; lp < (*secondary).size(); lp++) 
   {
@@ -125,6 +130,22 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     G4int   Track_id = (*secondary)[lp]->GetCreatorModelID();
     run->ParticleCount(name, energy);    
     // G4cout << " Second Type !!! " << name << G4endl;  
+    bool found_pi_plus = (name.compare("pi+")==0);
+    bool found_pi_min  = (name.compare("pi-")==0);
+    bool found_pi_zero = (name.compare("pi0")==0);
+    bool found_kaon = (name.find("kaon")!=std::string::npos);
+    // Code below used to remove most common secondaries and look at more interesting ones
+    // bool found_proton = (name.compare("proton")==0);
+    // bool found_neutron = (name.compare("neutron")==0);
+    // bool found_gamma = (name.compare("gamma")==0);
+
+    if( found_pi_plus || found_pi_min || found_pi_zero || found_kaon ){ 
+        // std::cout << "Paul, found:" << name << std::endl;
+        HasPionsKaons = true;}
+
+    if (type == "meson") HasMeson = true;
+    if (type == "baryon" && particle != primary ) HasBaryon = true; // exclude additional output particle when proton incident
+    
     if (energy > EmaxAll)
     {
       EmaxAll      = energy;
@@ -142,6 +163,10 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
       analysis->FillH1(3,EmaxAll); 
       if ( EmaxTrack_id == 21350)    analysis->FillH1(4,EmaxAll); 
       if ( EmaxTrack_id == 21600)    analysis->FillH1(5,EmaxAll); 
+
+      if (!HasMeson)               analysis->FillH1(6,EmaxAll); 
+      if (!HasPionsKaons)          analysis->FillH1(7,EmaxAll); 
+      if (!HasBaryon && !HasMeson) analysis->FillH1(8,EmaxAll); 
     }
   }
 
