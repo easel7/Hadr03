@@ -8,13 +8,13 @@
 #
 /run/initialize
 #
-/gun/particle proton
+/gun/particle alpha
 /gun/energy ENERGY GeV
 #
 /process/list
 /process/inactivate hadElastic
 #
-/analysis/setFileName ../Root2/Proton_BGO_NAMEGeV
+/analysis/setFileName ../Root2/He4_BGO_NAMEGeV
 /analysis/h1/set 1  100  0.  ENERGY GeV	# default the energy of the most energetic secondary
 /analysis/h1/set 2  100  0.  ENERGY GeV	# Emax secondary
 /analysis/h1/set 3  100  0.  ENERGY GeV	# Emax secondary && primary
