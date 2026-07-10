@@ -1,27 +1,29 @@
 void Compare2()
 {
 
-    int energy[31] = {10  ,12  ,16  ,20  ,25  ,32  ,49  ,50  ,63  ,80  
+    int energy[41] = {10  ,12  ,16  ,20  ,25  ,32  ,49  ,50  ,63  ,80  
                     ,100 ,120 ,160 ,200 ,250 ,320 ,490 ,500 ,630 ,800 
                     ,1000,1200,1600,2000,2500,3200,4900,5000,6300,8000 
-                    ,10000};
-    double Energy[31] ={0};
-    double Ratio[31] = {0};
-    double Ratio_Meson[31] = {0};
-    double Ratio_PiKaon[31] = {0};
-    double Ratio_Paul[31] = {0};
-    double Ratio_G4[31]  = {0};
-    double Ratio_G4NEW[31]  = {0};
+                    ,10000,12000,16000,20000,25000,32000,49000,50000,63000,80000 
+                    ,100000};
+    double Energy[41] ={0};
+    double Ratio[41] = {0};
+    double Ratio_Meson[41] = {0};
+    double Ratio_PiKaon[41] = {0};
+    double Ratio_Paul[41] = {0};
+    double Ratio_G4[41]  = {0};
+    double Ratio_G4NEW[41]  = {0};
 
 
-    double Paul[31] = { 0.1047   , 0.097465 , 0.0903725, 0.0842575, 0.07878  , 0.07443  ,
+    double Paul[41] = { 0.1047   , 0.097465 , 0.0903725, 0.0842575, 0.07878  , 0.07443  ,
                    0.07056  , 0.0670775, 0.064135 , 0.06161  , 0.0595825, 0.05796  ,
                    0.056615 , 0.055525 , 0.0546475, 0.0538575, 0.05335  , 0.0529325,
                    0.052575 , 0.0523   , 0.052085 , 0.052015 , 0.0519725, 0.0520275,
                    0.05197  , 0.0520675, 0.0523225, 0.052495 , 0.0525175, 0.052765 ,
-                   0.052995};
+                   0.052995 , 0.052995 , 0.052995, 0.052995, 0.052995, 0.052995, 
+                   0.052995 , 0.052995 , 0.052995, 0.052995, 0.052995};
 
-    for (int ii = 0; ii <31 ; ii++)
+    for (int ii = 0; ii <41 ; ii++)
     {
         auto file = TFile::Open(Form("/Users/xiongzheng/software/Hadr03/Root2/Proton_BGO_%dGeV.root",energy[ii]));
         auto h1   = (TH1D*)file->Get("1");
@@ -62,7 +64,7 @@ void Compare2()
         Ratio[ii]        = 1 - h4->Integral() / h2->Integral();
         Ratio_Meson[ii]  = 1 - h6->Integral() / h2->Integral();
         Ratio_PiKaon[ii] = 1 - h7->Integral() / h2->Integral();
-        Ratio_Paul[ii]= 1 - Paul[ii];
+        Ratio_Paul[ii]  = 1 - Paul[ii];
         Ratio_G4NEW[ii] = Ratio[ii]       / Ratio_Meson[ii];
         Ratio_G4[ii]    = Ratio_Meson[ii] / Ratio_Paul[ii];
 
@@ -77,12 +79,12 @@ void Compare2()
     } 
 
     auto c2 = new TCanvas("c2","c2",2700,900);
-    auto gr1 = new TGraph(31,Energy,Ratio);
-    auto gr2 = new TGraph(31,Energy,Ratio_Meson);
-    auto gr3 = new TGraph(31,Energy,Ratio_PiKaon);
-    auto gr4 = new TGraph(31,Energy,Ratio_Paul);
-    auto gr5 = new TGraph(31,Energy,Ratio_G4);
-    auto gr6 = new TGraph(31,Energy,Ratio_G4NEW);
+    auto gr1 = new TGraph(41,Energy,Ratio);
+    auto gr2 = new TGraph(41,Energy,Ratio_Meson);
+    auto gr3 = new TGraph(41,Energy,Ratio_PiKaon);
+    auto gr4 = new TGraph(41,Energy,Ratio_Paul);
+    auto gr5 = new TGraph(41,Energy,Ratio_G4);
+    auto gr6 = new TGraph(41,Energy,Ratio_G4NEW);
 
 
     c2->Divide(3,1);
@@ -90,7 +92,7 @@ void Compare2()
     gPad->SetLogx(1);
     gPad->SetGrid(1,1);
     gr1->GetYaxis()->SetRangeUser(0.89,0.95);
-    gr1->GetXaxis()->SetLimits(9e0,2e4);
+    gr1->GetXaxis()->SetLimits(9e0,2e5);
     gr1->SetMarkerStyle(20);
 
     gr2->SetLineColor(kMagenta);
