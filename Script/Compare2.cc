@@ -23,7 +23,7 @@ void Compare2()
 
     for (int ii = 0; ii <31 ; ii++)
     {
-        auto file = TFile::Open(Form("/Users/xiongzheng/software/Hadr03/Root2/Deuteron_BGO_%dGeV.root",energy[ii]));
+        auto file = TFile::Open(Form("/Users/xiongzheng/software/Hadr03/Root2/Proton_BGO_%dGeV.root",energy[ii]));
         auto h1   = (TH1D*)file->Get("1");
         auto h2   = (TH1D*)file->Get("2");
         auto h3   = (TH1D*)file->Get("3");
@@ -73,7 +73,7 @@ void Compare2()
         lg1->AddEntry(h6,"most energetic secondary && ==primary && No meson","l");
         lg1->AddEntry(h7,"most energetic secondary && ==primary && No pion kaon","l");
         lg1->Draw();
-        c1->SaveAs(Form("/Users/xiongzheng/software/Hadr03/Script/Deuteron2_BGO_%dGeV.pdf",energy[ii]));
+        c1->SaveAs(Form("/Users/xiongzheng/software/Hadr03/Script/Proton2_BGO_%dGeV.pdf",energy[ii]));
     } 
 
     auto c2 = new TCanvas("c2","c2",2700,900);
@@ -89,7 +89,7 @@ void Compare2()
     c2->cd(1);
     gPad->SetLogx(1);
     gPad->SetGrid(1,1);
-    gr1->GetYaxis()->SetRangeUser(0.89,1.05);
+    gr1->GetYaxis()->SetRangeUser(0.89,0.95);
     gr1->GetXaxis()->SetLimits(9e0,2e4);
     gr1->SetMarkerStyle(20);
 
@@ -113,7 +113,7 @@ void Compare2()
     gr1->Draw("ALP");
     gr2->Draw("PLSAME");
     gr3->Draw("PLSAME");
-    // gr4->Draw("PLSAME");
+    gr4->Draw("PLSAME");
     
     gr1->SetName("QE_Truth_G4_11");
     gr2->SetName("Meson_G4_11");
@@ -124,7 +124,7 @@ void Compare2()
     lg1->AddEntry(gr1,"QE truth Geant4.11","lp");
     lg1->AddEntry(gr2,"Meson  Geant4.11","lp"); 
     lg1->AddEntry(gr3,"PiKaon Geant4.11 ","lp"); 
-    // lg1->AddEntry(gr4,"PiKaon Geant4.10","lp"); 
+    lg1->AddEntry(gr4,"PiKaon Geant4.10","lp"); 
     lg1->Draw();
     
     c2->cd(2);
@@ -141,9 +141,9 @@ void Compare2()
     gr6->Draw("ALP");
     gr6->SetName("Ratio_QE_Meson_G4_11");
 
-    c2->SaveAs("/Users/xiongzheng/software/Hadr03/Script/Deuteron2_Correction.pdf");
+    c2->SaveAs("/Users/xiongzheng/software/Hadr03/Script/Proton2_Correction.pdf");
 
-    auto file = TFile::Open("/Users/xiongzheng/software/Hadr03/Script/Deuteron2_Correction.root","RECREATE");
+    auto file = TFile::Open("/Users/xiongzheng/software/Hadr03/Script/Proton2_Correction.root","RECREATE");
     gr1->Write();
     gr2->Write();
     gr3->Write();
