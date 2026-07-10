@@ -66,8 +66,8 @@ Tag=Proton
 # ${exe} /Users/xiongzheng/software/Hadr03/Macro2/He4_8000GeV.mac
 # ${exe} /Users/xiongzheng/software/Hadr03/Macro2/He4_10000GeV.mac
 
-${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_100000GeV.mac
-${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_1000000GeV.mac
+# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_100000GeV.mac
+${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_500000GeV.mac
 
 git add -A
 git commit -m "Auto update $(date '+%F %T')" || true
