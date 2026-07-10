@@ -12,5 +12,5 @@ do
         -e "s/ENERGY/${Energy}/g" \
         -e "s/NAME/${Name[$i]}/g" \
         /Users/xiongzheng/software/Hadr03/Macro2/Proton_template.mac \
-        > /Users/xiongzheng/software/Hadr03/Macro2/He4_${Name[$i]}GeV.mac
+        > /Users/xiongzheng/software/Hadr03/Macro2/Proton_${Name[$i]}GeV.mac
 done
