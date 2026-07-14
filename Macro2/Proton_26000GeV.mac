@@ -9,20 +9,20 @@
 /run/initialize
 #
 /gun/particle proton
-/gun/energy 24000 GeV
+/gun/energy 26000 GeV
 #
 /process/list
 /process/inactivate hadElastic
 #
-/analysis/setFileName ../Root2/Proton_BGO_24000GeV
-/analysis/h1/set 1  100  0.  24000 GeV	# default the energy of the most energetic secondary
-/analysis/h1/set 2  100  0.  24000 GeV	# Emax secondary
-/analysis/h1/set 3  100  0.  24000 GeV	# Emax secondary && primary
-/analysis/h1/set 4  100  0.  24000 GeV	# Emax secondary && primary && TrackID == QE
-/analysis/h1/set 5  100  0.  24000 GeV	# Emax secondary && primary && TrackID == Diffraction
-/analysis/h1/set 6  100  0.  24000 GeV	# Emax secondary && primary && No meson
-/analysis/h1/set 7  100  0.  24000 GeV	# Emax secondary && primary && No baryon
-/analysis/h1/set 8  100  0.  24000 GeV	# Emax secondary && primary && No baryon && No meson
+/analysis/setFileName ../Root2/Proton_BGO_26000GeV
+/analysis/h1/set 1  100  0.  26000 GeV	# default the energy of the most energetic secondary
+/analysis/h1/set 2  100  0.  26000 GeV	# Emax secondary
+/analysis/h1/set 3  100  0.  26000 GeV	# Emax secondary && primary
+/analysis/h1/set 4  100  0.  26000 GeV	# Emax secondary && primary && TrackID == QE
+/analysis/h1/set 5  100  0.  26000 GeV	# Emax secondary && primary && TrackID == Diffraction
+/analysis/h1/set 6  100  0.  26000 GeV	# Emax secondary && primary && No meson
+/analysis/h1/set 7  100  0.  26000 GeV	# Emax secondary && primary && No baryon
+/analysis/h1/set 8  100  0.  26000 GeV	# Emax secondary && primary && No baryon && No meson
 
 
 /run/printProgress 1000

@@ -78,8 +78,8 @@ Tag=Proton
 # ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_80000GeV.mac
 # ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_10000GeV.mac
 
-${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_24000GeV.mac
-${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_25001GeV.mac
+# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_24000GeV.mac
+# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_25001GeV.mac
 ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_26000GeV.mac
 
 
