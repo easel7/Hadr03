@@ -64,9 +64,9 @@ void HistoManager::Book()
     "kinetic energy of the most energetic secondary + secondries is of the same type as primary",  // 3
     "Track Id of the most energetic secondary + secondries is of the same type as primary + QE",  // 4
     "Track Id of the most energetic secondary + secondries is of the same type as primary + diffraction",  // 5
-    "Track Id of the most energetic secondary + secondries is of the same type as primary + No Messon",  // 6
-    "kinetic energy of deuterons",  // 7
-    "kinetic energy of alphas",  // 8
+    "Track Id of the most energetic secondary + secondries is of the same type as primary + No Meson",  // 6
+    "Track Id of the most energetic secondary + secondries is of the same type as primary + No PiKaon",  // 7
+    "Track Id of the most energetic secondary + secondries is of the same type as primary + No Baryon + No Meson",  // 8
     "kinetic energy of nuclei",  // 8
     "kinetic energy of mesons",  // 9
     "kinetic energy of baryons",  // 10

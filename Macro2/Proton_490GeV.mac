@@ -15,15 +15,15 @@
 /process/inactivate hadElastic
 #
 /analysis/setFileName ../Root2/Proton_BGO_490GeV
-/analysis/h1/set 1  100  0.  398.11 GeV	# default the energy of the most energetic secondary
-/analysis/h1/set 2  100  0.  398.11 GeV	# Emax secondary
-/analysis/h1/set 3  100  0.  398.11 GeV	# Emax secondary && primary
-/analysis/h1/set 4  100  0.  398.11 GeV	# Emax secondary && primary && TrackID == QE
-/analysis/h1/set 5  100  0.  398.11 GeV	# Emax secondary && primary && TrackID == Diffraction
-/analysis/h1/set 6  100  0.  398.11 GeV	# Emax secondary && primary && No meson
-/analysis/h1/set 7  100  0.  398.11 GeV	# Emax secondary && primary && No baryon
-/analysis/h1/set 8  100  0.  398.11 GeV	# Emax secondary && primary && No baryon && No meson
+/analysis/h1/set 1  1000  0.  398.11 GeV	# default the energy of the most energetic secondary
+/analysis/h1/set 2  1000  0.  398.11 GeV	# Emax secondary
+/analysis/h1/set 3  1000  0.  398.11 GeV	# Emax secondary && primary
+/analysis/h1/set 4  1000  0.  398.11 GeV	# Emax secondary && primary && TrackID == QE
+/analysis/h1/set 5  1000  0.  398.11 GeV	# Emax secondary && primary && TrackID == Diffraction
+/analysis/h1/set 6  1000  0.  398.11 GeV	# Emax secondary && primary && No meson
+/analysis/h1/set 7  1000  0.  398.11 GeV	# Emax secondary && primary && No baryon
+/analysis/h1/set 8  1000  0.  398.11 GeV	# Emax secondary && primary && No baryon && No meson
 
 
-/run/printProgress 1000
-/run/beamOn 400000
+/run/printProgress 10000
+/run/beamOn 1000000
