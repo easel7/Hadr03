@@ -91,7 +91,7 @@ void Compare2()
     c2->cd(1);
     gPad->SetLogx(1);
     gPad->SetGrid(1,1);
-    gr1->GetYaxis()->SetRangeUser(0.89,0.95);
+    gr1->GetYaxis()->SetRangeUser(0.89,0.96);
     gr1->GetXaxis()->SetLimits(9e0,2e5);
     gr1->SetMarkerStyle(20);
 

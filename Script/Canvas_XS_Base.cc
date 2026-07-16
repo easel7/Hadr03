@@ -82,11 +82,17 @@ void Canvas_XS_Base()
     gre7->SetName("Geant4_D");
     gre8->SetName("Geant4_H");
     gre9_1->SetName("Geant4_Ratio_Dp_OLD");
-    gre9_2->SetName("Geant4_Ratio_Dp_NEW");
-    gre9_3->SetName("Geant4_Ratio_Dp_Check");
+    gre9_2->SetName("Geant4_Ratio_Dp_Check");
+    gre9_3->SetName("Geant4_Ratio_Dp_NEW");
     gre10_1->SetName("Geant4_Gamma_OLD");
     gre10_2->SetName("Geant4_Gamma_NEW");
     gre10_3->SetName("Geant4_Gamma_Check");
+
+    gre9_2->SetTitle(";Ek (GeV);#sigma^{ine}_{D,G4} / (#sigma^{ine}_{P,G4} #upoint f_{QE}(E))");
+    gre9_3->SetTitle(";Ek (GeV);#sigma^{ine}_{D,G4} / #sigma^{ine}_{P,G4} #upoint #alpha(E) ");
+
+    gre10_2->SetTitle("(1+#kappa#upoint#gamma') #sigma_{D,G4} = #sigma_{D,exp}, (1+#kappa) #sigma_{p,G4} = #sigma_{p,exp};Ek (GeV);#gamma'");
+    gre10_3->SetTitle("(1+#kappa#upoint#gamma') #sigma_{D,G4} = #sigma_{D,exp}, (1+#kappa) #sigma_{p,G4} = #sigma_{p,exp};Ek (GeV);#gamma'");
 
     double XS_P_Paul[7]         = {7.31E+02,6.80E+02,6.59E+02,6.45E+02,6.59E+02,6.77E+02,7.16E+02};
     double XS_P_Paul_Err[7]     = {2.02E+01,2.12E+01,2.96E+01,3.57E+01,5.54E+01,8.56E+01,1.56E+02};
@@ -161,7 +167,7 @@ void Canvas_XS_Base()
     
     gre9_1->GetYaxis()->SetRangeUser(1,1.4e0);
     gre9_1->GetXaxis()->SetLimits(8e0,2e7);
-    gre9_1->SetTitle(";Ek (GeV);#sigma^{ine}_{D,G4} / #sigma^{ine}_{P,G4} ");
+    gre9_1->SetTitle(";Ek (GeV);#sigma^{ine}_{D,G4} / #sigma^{ine}_{P,G4}");
     gre9_1->Draw("AL");
     gre9_2->GetXaxis()->SetLimits(1e2,1e5);
     gre9_2->Draw("LSAME");
@@ -240,7 +246,6 @@ void Canvas_XS_Base()
     auto C6 = new TCanvas("C6","C6",0,0,1200,1000);
     gPad->SetLogx(1);
     gre_alpha->GetXaxis()->SetLimits(9e0,2e5);
-
     gre_alpha->SetTitle("#alpha = f_{QE}(E_{#infty}) / f_{QE}(E) ;Energy (GeV); Ratio");
     gre_alpha->SetName("alpha_Fraction_QE");
     gre_alpha->Draw("ALP");
