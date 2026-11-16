@@ -45,6 +45,7 @@ void Canvas_XS_Base()
     }
     // auto gre_QE = new TGraph(41 , XS_QE_E, XS_QE_proton);
     double v_temp                  = 1.108/  gre_QE->Eval(1e3);
+    cout << v_temp << endl;
 
     for (int ii = 0 ; ii < Nbins ; ii++)
     {

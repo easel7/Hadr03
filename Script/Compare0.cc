@@ -1,7 +1,7 @@
 void Compare0()
 {
 
-    auto file = TFile::Open(Form("/Users/xiongzheng/software/Hadr03/Root2/Proton_BGO_10000GeV.root"));
+    auto file = TFile::Open(Form("/Users/xiongzheng/software/Hadr03/Root2/Proton_BGO_100GeV.root"));
     auto h1   = (TH1D*)file->Get("1");
     auto h2   = (TH1D*)file->Get("2");
     auto h3   = (TH1D*)file->Get("3");
@@ -25,7 +25,7 @@ void Compare0()
 
     gPad->SetLogy(1); 
 
-    h2->GetXaxis()->SetRangeUser(0,10);
+    h2->GetXaxis()->SetRangeUser(0,100);
     h2->Draw("hist");
     // h3->Add(h4,-1);
     h3->Draw("histsame");
@@ -51,5 +51,5 @@ void Compare0()
     lg1->AddEntry(h7,"most energetic secondary && ==primary && No pion kaon","l");
     lg1->Draw();
 
-    c1->SaveAs("/Users/xiongzheng/software/Hadr03/Script/Proton2_BGO_10000GeV.pdf");
+    c1->SaveAs("/Users/xiongzheng/software/Hadr03/Script/Proton2_BGO_100GeV.pdf");
 }
