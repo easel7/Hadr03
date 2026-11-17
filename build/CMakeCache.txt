@@ -396,7 +396,7 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/Users/xiongzheng/software/Hadr03/build
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=4
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=4
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=5
 //Patch version of cmake used to create the current loaded cache
 CMAKE_CACHE_PATCH_VERSION:INTERNAL=0
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
@@ -433,7 +433,7 @@ CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //Set initial state for CMake diagnostics; used to persist state
 // set by command-line options across invocations.
-CMAKE_DIAGNOSTIC_INIT:INTERNAL=CMD_AUTHOR=WARN;CMD_DEPRECATED=WARN;CMD_EXPERIMENTAL=WARN;CMD_INSTALL_ABSOLUTE_DESTINATION=IGNORE;CMD_POLICY=WARN;CMD_UNINITIALIZED=IGNORE;CMD_UNUSED_CLI=WARN
+CMAKE_DIAGNOSTIC_INIT:INTERNAL=CMD_AUTHOR=WARN;CMD_DEPRECATED=WARN;CMD_EXPERIMENTAL=WARN;CMD_STRICT=IGNORE;CMD_INSTALL_ABSOLUTE_DESTINATION=IGNORE;CMD_NON_TARGET_DIRECTIVE=IGNORE;CMD_POLICY=WARN;CMD_UNINITIALIZED=IGNORE;CMD_UNUSED_CLI=WARN
 //ADVANCED property for variable: CMAKE_DLLTOOL
 CMAKE_DLLTOOL-ADVANCED:INTERNAL=1
 //Path to cache edit program executable.
@@ -561,6 +561,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STRIP
 CMAKE_STRIP-ADVANCED:INTERNAL=1
+//Opaque identifier for the current system environment
+CMAKE_SYSTEM_ENVIRONMENT_ID:INTERNAL=
 //ADVANCED property for variable: CMAKE_TAPI
 CMAKE_TAPI-ADVANCED:INTERNAL=1
 //uname command
@@ -570,7 +572,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Deprecated.  Use -W[no-]deprecated instead.
 CMAKE_WARN_DEPRECATED:INTERNAL=ON
 //Details about finding Freetype
-FIND_PACKAGE_MESSAGE_DETAILS_Freetype:INTERNAL=[/opt/homebrew/lib/libfreetype.dylib][/opt/homebrew/include/freetype2][v2.14.3(2.14.1)]
+FIND_PACKAGE_MESSAGE_DETAILS_Freetype:INTERNAL=[/opt/homebrew/lib/libfreetype.dylib][/opt/homebrew/include/freetype2][v2.15.0(2.15.0)]
 //Details about finding Geant4
 FIND_PACKAGE_MESSAGE_DETAILS_Geant4:INTERNAL=[/Users/xiongzheng/software/build/geant4-v11.4.0-install/lib/cmake/Geant4/Geant4Config.cmake][v11.4.0()]
 //Details about finding OpenGL
@@ -671,6 +673,8 @@ QT_FEATURE_cborstreamreader:INTERNAL=ON
 QT_FEATURE_cborstreamwriter:INTERNAL=ON
 //Qt feature: checkbox (from target Qt6::Widgets)
 QT_FEATURE_checkbox:INTERNAL=ON
+//Qt feature: clang_module_maps (from target Qt6::Core)
+QT_FEATURE_clang_module_maps:INTERNAL=OFF
 //Qt feature: clipboard (from target Qt6::Gui)
 QT_FEATURE_clipboard:INTERNAL=ON
 //Qt feature: clock_gettime (from target Qt6::Core)
@@ -778,7 +782,7 @@ QT_FEATURE_draganddrop:INTERNAL=ON
 //Qt feature: drm_atomic (from target Qt6::Gui)
 QT_FEATURE_drm_atomic:INTERNAL=OFF
 //Qt feature: dup3 (from target Qt6::Core)
-QT_FEATURE_dup3:INTERNAL=OFF
+QT_FEATURE_dup3:INTERNAL=ON
 //Qt feature: dynamicgl (from target Qt6::Gui)
 QT_FEATURE_dynamicgl:INTERNAL=OFF
 //Qt feature: easingcurve (from target Qt6::Core)
@@ -1038,7 +1042,7 @@ QT_FEATURE_opengles32:INTERNAL=OFF
 //Qt feature: openssl (from target Qt6::Core)
 QT_FEATURE_openssl:INTERNAL=ON
 //Qt feature: openssl_hash (from target Qt6::Core)
-QT_FEATURE_openssl_hash:INTERNAL=OFF
+QT_FEATURE_openssl_hash:INTERNAL=ON
 //Qt feature: openssl_linked (from target Qt6::Core)
 QT_FEATURE_openssl_linked:INTERNAL=ON
 //Qt feature: opensslv11 (from target Qt6::Core)
@@ -1047,6 +1051,8 @@ QT_FEATURE_opensslv11:INTERNAL=OFF
 QT_FEATURE_opensslv30:INTERNAL=ON
 //Qt feature: openvg (from target Qt6::Gui)
 QT_FEATURE_openvg:INTERNAL=OFF
+//Qt feature: optimized_tools (from target Qt6::Core)
+QT_FEATURE_optimized_tools:INTERNAL=OFF
 //Qt feature: pcre2 (from target Qt6::Core)
 QT_FEATURE_pcre2:INTERNAL=ON
 //Qt feature: pdf (from target Qt6::Gui)
@@ -1099,6 +1105,8 @@ QT_FEATURE_pthread_condattr_setclock:INTERNAL=OFF
 QT_FEATURE_pthread_timedjoin:INTERNAL=OFF
 //Qt feature: pushbutton (from target Qt6::Widgets)
 QT_FEATURE_pushbutton:INTERNAL=ON
+//Qt feature: qqnx_eventfd (from target Qt6::Core)
+QT_FEATURE_qqnx_eventfd:INTERNAL=OFF
 //Qt feature: qqnx_imf (from target Qt6::Gui)
 QT_FEATURE_qqnx_imf:INTERNAL=OFF
 //Qt feature: qqnx_pps (from target Qt6::Core)
@@ -1109,6 +1117,10 @@ QT_FEATURE_qt_framework:INTERNAL=ON
 QT_FEATURE_qtgui_threadpool:INTERNAL=ON
 //Qt feature: radiobutton (from target Qt6::Widgets)
 QT_FEATURE_radiobutton:INTERNAL=ON
+//Qt feature: randomgenerator_disable_fallback (from target Qt6::Core)
+QT_FEATURE_randomgenerator_disable_fallback:INTERNAL=OFF
+//Qt feature: rangemodel (from target Qt6::Core)
+QT_FEATURE_rangemodel:INTERNAL=ON
 //Qt feature: raster_64bit (from target Qt6::Gui)
 QT_FEATURE_raster_64bit:INTERNAL=ON
 //Qt feature: raster_fp (from target Qt6::Gui)
@@ -1199,6 +1211,8 @@ QT_FEATURE_stackedwidget:INTERNAL=ON
 QT_FEATURE_standarditemmodel:INTERNAL=ON
 //Qt feature: static (from target Qt6::Core)
 QT_FEATURE_static:INTERNAL=OFF
+//Qt feature: static_compiler_runtime (from target Qt6::Core)
+QT_FEATURE_static_compiler_runtime:INTERNAL=OFF
 //Qt feature: statusbar (from target Qt6::Widgets)
 QT_FEATURE_statusbar:INTERNAL=ON
 //Qt feature: statustip (from target Qt6::Widgets)
@@ -1215,6 +1229,8 @@ QT_FEATURE_style_android:INTERNAL=OFF
 QT_FEATURE_style_fusion:INTERNAL=ON
 //Qt feature: style_mac (from target Qt6::Widgets)
 QT_FEATURE_style_mac:INTERNAL=ON
+//Qt feature: style_ohos (from target Qt6::Widgets)
+QT_FEATURE_style_ohos:INTERNAL=OFF
 //Qt feature: style_stylesheet (from target Qt6::Widgets)
 QT_FEATURE_style_stylesheet:INTERNAL=ON
 //Qt feature: style_windows (from target Qt6::Widgets)
@@ -1223,6 +1239,8 @@ QT_FEATURE_style_windows:INTERNAL=ON
 QT_FEATURE_style_windows11:INTERNAL=OFF
 //Qt feature: style_windowsvista (from target Qt6::Widgets)
 QT_FEATURE_style_windowsvista:INTERNAL=OFF
+//Qt feature: swift_interop (from target Qt6::Core)
+QT_FEATURE_swift_interop:INTERNAL=OFF
 //Qt feature: syntaxhighlighter (from target Qt6::Widgets)
 QT_FEATURE_syntaxhighlighter:INTERNAL=ON
 //Qt feature: syslog (from target Qt6::Core)
@@ -1267,6 +1285,10 @@ QT_FEATURE_tablewidget:INTERNAL=ON
 QT_FEATURE_tabwidget:INTERNAL=ON
 //Qt feature: temporaryfile (from target Qt6::Core)
 QT_FEATURE_temporaryfile:INTERNAL=ON
+//Qt feature: test_auto (from target Qt6::Core)
+QT_FEATURE_test_auto:INTERNAL=ON
+//Qt feature: test_baseline (from target Qt6::Core)
+QT_FEATURE_test_baseline:INTERNAL=OFF
 //Qt feature: test_gui (from target Qt6::Core)
 QT_FEATURE_test_gui:INTERNAL=ON
 //Qt feature: test_squish (from target Qt6::Core)
@@ -1403,6 +1425,8 @@ QT_FEATURE_widgets:INTERNAL=ON
 QT_FEATURE_widgettextcontrol:INTERNAL=ON
 //Qt feature: windows_ioring (from target Qt6::Core)
 QT_FEATURE_windows_ioring:INTERNAL=OFF
+//Qt feature: windows_ioring_runtime (from target Qt6::Core)
+QT_FEATURE_windows_ioring_runtime:INTERNAL=OFF
 //Qt feature: windows_ioring_skip_builder_param_checks (from target
 // Qt6::Core)
 QT_FEATURE_windows_ioring_skip_builder_param_checks:INTERNAL=OFF
@@ -1424,6 +1448,8 @@ QT_FEATURE_xcb_glx_plugin:INTERNAL=OFF
 QT_FEATURE_xcb_sm:INTERNAL=OFF
 //Qt feature: xcb_xlib (from target Qt6::Gui)
 QT_FEATURE_xcb_xlib:INTERNAL=OFF
+//Qt feature: xdg_desktop_portal_file_transfer (from target Qt6::Gui)
+QT_FEATURE_xdg_desktop_portal_file_transfer:INTERNAL=OFF
 //Qt feature: xkbcommon (from target Qt6::Gui)
 QT_FEATURE_xkbcommon:INTERNAL=OFF
 //Qt feature: xkbcommon_x11 (from target Qt6::Gui)

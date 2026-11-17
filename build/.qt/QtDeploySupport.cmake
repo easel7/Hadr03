@@ -26,6 +26,7 @@ endif()
 if(QT_DEPLOY_PREFIX STREQUAL "")
     set(QT_DEPLOY_PREFIX .)
 endif()
+get_filename_component(QT_DEPLOY_PREFIX "${QT_DEPLOY_PREFIX}" ABSOLUTE)
 if(NOT QT_DEPLOY_IGNORED_LIB_DIRS)
     set(QT_DEPLOY_IGNORED_LIB_DIRS "")
 endif()
@@ -61,7 +62,7 @@ set(__QT_DEPLOY_QT_DEBUG_POSTFIX "")
 # Define the CMake commands to be made available during deployment.
 set(__qt_deploy_support_files
     "/Users/xiongzheng/software/Hadr03/build/.qt/QtDeployTargets.cmake"
-    "/opt/homebrew/Cellar/qtbase/6.11.1/lib/cmake/Qt6Core/Qt6CoreDeploySupport.cmake"
+    "/opt/homebrew/Cellar/qtbase/6.12.0_2/lib/cmake/Qt6Core/Qt6CoreDeploySupport.cmake"
 )
 foreach(__qt_deploy_support_file IN LISTS __qt_deploy_support_files)
     include("${__qt_deploy_support_file}")
