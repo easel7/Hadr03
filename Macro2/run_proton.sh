@@ -2,21 +2,21 @@
 exe=/Users/xiongzheng/software/Hadr03/build/Hadr03
 Tag=Proton
 
-${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_16GeV.mac
+# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_16GeV.mac
 
 
 
-# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_32GeV.mac
-# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_49GeV.mac
-# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_80GeV.mac
-# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_120GeV.mac
-# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_200GeV.mac
-# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_1000GeV.mac
-# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_2000GeV.mac
-# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_2500GeV.mac
-# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_3200GeV.mac
-# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_4900GeV.mac
-# ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_8000GeV.mac
+${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_32GeV.mac
+${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_49GeV.mac
+${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_80GeV.mac
+${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_120GeV.mac
+${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_200GeV.mac
+${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_1000GeV.mac
+${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_2000GeV.mac
+${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_2500GeV.mac
+${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_3200GeV.mac
+${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_4900GeV.mac
+${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_8000GeV.mac
 
 
 # ${exe} /Users/xiongzheng/software/Hadr03/Macro2/Proton_10GeV.mac
