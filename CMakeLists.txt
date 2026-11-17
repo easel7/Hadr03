@@ -32,7 +32,7 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 # Add the executable, and link it to the Geant4 libraries
 #
 add_executable(Hadr03 Hadr03.cc ${sources} ${headers})
-target_link_libraries(Hadr03 ${Geant4_LIBRARIES} )
+target_link_libraries(Hadr03 ${Geant4_LIBRARIES})
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we
